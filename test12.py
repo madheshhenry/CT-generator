@@ -64,7 +64,7 @@ def send_otp(email):
 def get_courses():
     with sqlite3.connect(DB_FILE) as conn:
         cursor = conn.cursor()
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('staff', 'generated_tcs', 'sqlite_sequence')")
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('staff', 'generated_tcs', 'sqlite_sequence', 'download_history')")
         tables = [row[0] for row in cursor.fetchall()]
 
     return tables  # Return only table names
