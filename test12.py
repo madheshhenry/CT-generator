@@ -362,9 +362,7 @@ def download_all_tcs(selected_tables):
  #course login    
 
 def staff_login():
-    """Handles staff login for Manage Courses"""
-    if "manage_course_logged_in" not in st.session_state:
-        st.session_state.manage_course_logged_in = False
+    
 
     if not st.session_state.manage_course_logged_in:
         st.subheader("🔐 Staff Login Required")
@@ -387,7 +385,7 @@ def staff_login():
                     st.error("❌ Invalid Credentials!")
 
 def logout():
-    """Logs out the user from Manage Courses"""
+    
     st.session_state.manage_course_logged_in = False
     st.rerun()
 
